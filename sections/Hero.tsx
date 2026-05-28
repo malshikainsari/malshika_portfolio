@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen overflow-hidden px-6 pt-32 sm:px-10 lg:px-16 xl:px-24"
+      className="scroll-mt-32 relative min-h-screen overflow-hidden px-6 pt-32 sm:px-10 lg:px-16 xl:px-24"
     >
       <div className="absolute inset-0 -z-20 bg-[#11120D]" />
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_20%_20%,rgba(216,207,188,0.07),transparent_22%),radial-gradient(circle_at_80%_30%,rgba(86,84,73,0.18),transparent_24%),radial-gradient(circle_at_70%_80%,rgba(255,251,244,0.04),transparent_20%)]" />
