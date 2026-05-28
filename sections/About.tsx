@@ -23,7 +23,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="px-6 py-24 sm:px-10 lg:px-16 xl:px-24"
+      className="scroll-mt-32 px-6 py-24 sm:px-10 lg:px-16 xl:px-24"
     >
       <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
          <Reveal>
