@@ -15,30 +15,33 @@ export default function Navbar() {
   const [active, setActive] = useState("home");
 
   useEffect(() => {
-    const sections = navItems
-      .map((item) => document.querySelector(item.href))
-      .filter(Boolean) as Element[];
+  const sectionIds = navItems.map((item) => item.href.replace("#", ""));
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      {
-        root: null,
-        threshold: 0.6,
+  const handleScroll = () => {
+    const triggerPoint = window.scrollY + window.innerHeight * 0.35;
+    let current = "home";
+
+    for (const id of sectionIds) {
+      const el = document.getElementById(id);
+      if (!el) continue;
+
+      if (el.offsetTop <= triggerPoint) {
+        current = id;
       }
-    );
+    }
 
-    sections.forEach((section) => observer.observe(section));
+    setActive(current);
+  };
 
-    return () => {
-      sections.forEach((section) => observer.unobserve(section));
-    };
-  }, []);
+  handleScroll();
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  window.addEventListener("resize", handleScroll);
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("resize", handleScroll);
+  };
+}, []);
 
   return (
     <header className="fixed top-4 left-0 z-50 w-full px-4">
@@ -47,39 +50,33 @@ export default function Navbar() {
           <a
             href="#home"
             className="flex items-center gap-3 rounded-full px-3 py-2 transition hover:bg-white/5"
+            onClick={() => setActive("home")}
           >
             <div className="relative flex items-center justify-center">
-  {/* Animated Glow Ring */}
-  <div
-    className="absolute h-16 w-16 rounded-full
-    bg-[#565449]
-    opacity-40 blur-[18px]
-    animate-[pulse_4s_ease-in-out_infinite]"
-  />
+              <div
+                className="absolute h-16 w-16 rounded-full bg-[#565449] opacity-40 blur-[18px]
+                animate-[pulse_4s_ease-in-out_infinite]"
+              />
 
-  {/* Profile Image */}
-  <div
-    className="relative h-14 w-14 overflow-hidden rounded-full
-    border-2 border-[#565449]
-    shadow-[0_0_30px_rgba(86,84,73,0.55)]
-    transition duration-300
-    hover:scale-105
-    hover:border-[#D8CFBC]"
-  >
-    <Image
-      src="/profile.jpg"
-      alt="Malshika"
-      fill
-      sizes="56px"
-      className="object-cover"
-    />
-  </div>
-</div>
+              <div
+                className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-[#565449]
+                shadow-[0_0_30px_rgba(86,84,73,0.55)]
+                transition duration-300 hover:scale-105 hover:border-[#D8CFBC]"
+              >
+                <Image
+                  src="/profile.jpg"
+                  alt="Malshika"
+                  fill
+                  sizes="56px"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
             <div className="hidden flex-col leading-tight sm:flex">
               <span className="text-sm font-semibold tracking-[0.18em] text-[#FFFBF4]">
                 MALS HIKA
               </span>
-            
             </div>
           </a>
 
@@ -91,6 +88,7 @@ export default function Navbar() {
                 <a
                   key={item.label}
                   href={item.href}
+                  onClick={() => setActive(item.href.replace("#", ""))}
                   className={`rounded-full px-4 py-2 text-sm transition-all duration-300 ${
                     isActive
                       ? "bg-[#D8CFBC] text-[#11120D] shadow-lg shadow-[#D8CFBC]/20"
