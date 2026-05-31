@@ -93,7 +93,7 @@ function GitHubMark({ className = "" }: { className?: string }) {
 import Reveal from "@/components/Reveal";
 export default function Projects() {
   return (
-    <section id="projects" className="px-6 py-24 sm:px-10 lg:px-16 xl:px-24">
+    <section id="projects" className="scroll-mt-32 px-6 py-24 sm:px-10 lg:px-16 xl:px-24">
       <div className="mx-auto max-w-7xl">
         <Reveal>
         <div className="mb-14 max-w-2xl">
