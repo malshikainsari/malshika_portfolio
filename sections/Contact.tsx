@@ -242,21 +242,21 @@ export default function Contact() {
             <ContactCard
               label="Email"
               title="Send me an email"
-              href="mailto:malshikainsari89@gmail.com"
+              href="#contact"
               icon={<Mail size={17} />}
             />
 
             <ContactCard
               label="LinkedIn"
               title="Connect with me"
-              href="https://www.linkedin.com/"
+              href="http://www.linkedin.com/in/malshika-insari-b4833a2b7"
               icon={<LinkedInMark className="h-[17px] w-[17px]" />}
             />
 
             <ContactCard
               label="GitHub"
               title="Check out my code"
-              href="https://github.com/"
+              href="https://github.com/malshikainsari"
               icon={<GitHubMark className="h-[17px] w-[17px]" />}
             />
 
@@ -272,5 +272,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  );f
+  );
 }
