@@ -273,8 +273,6 @@ export default function Contact() {
       </div>
     </section>
   );
-<<<<<<< HEAD
+
 }
-=======
-}
->>>>>>> 91ad803e5d4b7bc1163fca4c20d63d4f59800b71
+
