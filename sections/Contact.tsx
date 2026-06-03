@@ -272,5 +272,5 @@ export default function Contact() {
         </div>
       </div>
     </section>
-  );f
+  );
 }
