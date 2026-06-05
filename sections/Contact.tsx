@@ -249,7 +249,7 @@ export default function Contact() {
             <ContactCard
               label="LinkedIn"
               title="Connect with me"
-              href="http://www.linkedin.com/in/malshika-insari-b4833a2b7"
+              href="www.linkedin.com/in/malshika-insari"
               icon={<LinkedInMark className="h-[17px] w-[17px]" />}
             />
 
