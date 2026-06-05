@@ -69,7 +69,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="http://www.linkedin.com/in/malshika-insari-b4833a2b7"
+              href="www.linkedin.com/in/malshika-insari"
               target="_blank"
               rel="noreferrer"
               className="flex h-11 w-11 items-center justify-center rounded-full border border-[#565449]/40 bg-[#4d4b41] text-[#FFFBF4] shadow-[0_0_25px_rgba(86,84,73,0.14)] transition duration-300 hover:scale-[1.05] hover:bg-[#615f53]"
